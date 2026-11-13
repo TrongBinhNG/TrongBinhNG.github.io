@@ -159,9 +159,9 @@ h3{font:600 1.3rem/1.2 var(--f-display);margin:0}
 .card ul.pts{margin:0;padding-left:18px;font-size:14px;display:grid;gap:4px}
 .card ul.pts li::marker{color:var(--accent)}
 .card .chips{margin-top:auto;padding-top:6px}
-.card a.out{position:absolute;right:16px;top:16px;font:600 12px var(--f-mono);text-decoration:none;color:var(--accent)}
-.card a.out:hover{text-decoration:underline}
-.card.has-link .top{padding-right:58px}
+.card .clinks{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:2px;padding-top:12px;border-top:1px dashed var(--line)}
+.card .clinks a{font:600 12.5px var(--f-mono);text-decoration:none;color:var(--accent)}
+.card .clinks a:hover{text-decoration:underline}
 .note{margin-top:18px;font-size:13.5px;color:var(--muted)}
 
 /* playables */
@@ -369,16 +369,17 @@ dialog::backdrop{background:rgba(5,7,12,.78);backdrop-filter:blur(3px)}
 
     <div class="grid" id="grid">
 
-      <article class="card reveal" data-tags="multi">
-        <div class="top"><span>2026 · Team project</span><span class="genre">Co-op defense</span></div>
-        <h3>Blitz Defender</h3>
-        <p>Online co-op defense game on Unity 6, with dedicated servers and hot-updated content.</p>
+      <article class="card reveal" data-tags="mobile multi">
+        <div class="top"><span>2026 · Google Play</span><span class="genre">Merge TD</span></div>
+        <h3>Starguard: Evo Merge TD</h3>
+        <p>Sci-fi merge tower defense with online co-op battles, arena rankings and hot-updated content. 10K+ downloads.</p>
         <ul class="pts">
           <li>Built combat systems: chip and perk upgrades, pet stats, crit, reflect and guard rules, late-game enemy rage.</li>
           <li>Moved balance thresholds into config so designers tune without code.</li>
           <li>Cut GC allocations in hot UI and string paths.</li>
         </ul>
         <ul class="chips"><li>Netcode for GameObjects</li><li>Nakama</li><li>Addressables</li><li>UniTask</li><li>DI</li></ul>
+        <div class="clinks"><a href="https://play.google.com/store/apps/details?id=com.ondi.space.defense" target="_blank" rel="noopener">Google Play ↗</a></div>
       </article>
 
       <article class="card reveal" data-tags="mobile">
@@ -472,32 +473,44 @@ dialog::backdrop{background:rgba(5,7,12,.78);backdrop-filter:blur(3px)}
         <ul class="chips"><li>2D</li><li>Pathfinding</li><li>Game math</li></ul>
       </article>
 
-      <article class="card has-link reveal" data-tags="web">
-        <a class="out" href="https://impossibledash.com" target="_blank" rel="noopener">Visit ↗</a>
-        <div class="top"><span>Sei Network</span><span class="genre">Web3</span></div>
+      <article class="card reveal" data-tags="web">
+        <div class="top"><span>Sei Network</span><span class="genre">Hardcore · Web3</span></div>
         <h3>Impossible Dash</h3>
-        <p>Web3 game on the Sei Network.</p>
+        <p>Ultra-hard pixel-art reflex game. Players wager SEI on their runs and fight for a spot on the monthly leaderboards.</p>
         <ul class="pts">
           <li>Built client gameplay and UI in Unity.</li>
-          <li>Integrated backend APIs and real-time messaging with a React Native front end for blockchain events.</li>
+          <li>Integrated backend APIs and real-time messaging with a React Native front end for wallet and blockchain events.</li>
         </ul>
-        <ul class="chips"><li>Unity WebGL</li><li>REST APIs</li><li>React Native bridge</li></ul>
+        <ul class="chips"><li>Unity WebGL</li><li>REST APIs</li><li>React Native bridge</li><li>Leaderboards</li></ul>
+        <div class="clinks"><a href="https://impossibledash.com" target="_blank" rel="noopener">Play ↗</a><a href="https://x.com/DashOnSei" target="_blank" rel="noopener">@DashOnSei on X ↗</a></div>
       </article>
 
-      <article class="card has-link reveal" data-tags="web">
-        <a class="out" href="https://star-symphony-game.vercel.app/" target="_blank" rel="noopener">Play ↗</a>
-        <div class="top"><span>Sei Network</span><span class="genre">Web3</span></div>
+      <article class="card reveal" data-tags="web multi">
+        <div class="top"><span>Sei Network</span><span class="genre">Rhythm · Web3</span></div>
         <h3>Star Symphony</h3>
-        <p>Browser game on the Sei Network.</p>
+        <p>Browser rhythm game with Live2D idol characters, story scenes and multiplayer score battles.</p>
         <ul class="pts">
           <li>Client gameplay and UI in Unity.</li>
-          <li>Worked with blockchain and front-end teams on data flow and in-game triggers.</li>
+          <li>Connected backend APIs and blockchain events to the game with the front-end team.</li>
         </ul>
-        <ul class="chips"><li>Unity WebGL</li><li>Web3</li></ul>
+        <ul class="chips"><li>Unity WebGL</li><li>Live2D</li><li>FMOD</li><li>Photon</li><li>Ink</li></ul>
+        <div class="clinks"><a href="https://star-symphony-game.vercel.app/" target="_blank" rel="noopener">Play ↗</a></div>
       </article>
 
-      <article class="card has-link reveal" data-tags="web">
-        <a class="out" href="https://chainplay.gg/game-nft/purrate-king/" target="_blank" rel="noopener">Info ↗</a>
+      <article class="card reveal" data-tags="multi web">
+        <div class="top"><span>2026 · Pocpoc Gaming</span><span class="genre">Multiplayer · Web3</span></div>
+        <h3>Pocpoc Gaming</h3>
+        <p>Real-time multiplayer obstacle-course party race with Web3 rewards, running in the browser.</p>
+        <ul class="pts">
+          <li>Set up the Unity 6 project: WebSocket matchmaking hands players into Photon Fusion rooms.</li>
+          <li>Bot record-and-replay, so every match fills with racers.</li>
+          <li>Username and Solana wallet login, character stats, skins and VFX.</li>
+          <li>Audited the client for cheats and backdoors; fixed a hardcoded race time and a wallet override.</li>
+        </ul>
+        <ul class="chips"><li>Unity 6</li><li>Photon Fusion</li><li>WebSocket</li><li>Solana</li><li>WebGL</li></ul>
+      </article>
+
+      <article class="card reveal" data-tags="web">
         <div class="top"><span>Telegram Mini App</span><span class="genre">Web3</span></div>
         <h3>Purrate King</h3>
         <p>Web3 game running as a Telegram Mini App.</p>
@@ -506,6 +519,7 @@ dialog::backdrop{background:rgba(5,7,12,.78);backdrop-filter:blur(3px)}
           <li>Backend API integration and real-time blockchain event handling.</li>
         </ul>
         <ul class="chips"><li>Cocos Creator</li><li>TypeScript</li><li>Telegram Mini Apps</li></ul>
+        <div class="clinks"><a href="https://chainplay.gg/game-nft/purrate-king/" target="_blank" rel="noopener">Info ↗</a></div>
       </article>
 
       <article class="card reveal" data-tags="multi">
